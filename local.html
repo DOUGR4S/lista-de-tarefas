@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .modal-bg {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.514);
+            position: absolute;
+            top: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal {
+            background-color: white;
+            width: 350px;
+            height: 250px;
+            border-radius: 5px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="welcome"></h1>
+    <button onclick="openModal()">Exibir Dados</button>
+
+    <div class="modal-bg" id="modal-bg">
+        <div class="modal" id="modal">
+
+        </div>
+    </div>
+
+    <script>
+
+        var cliente = {
+            nome: nome,
+            cpf: cpf
+        }
+
+        var nome = localStorage.getItem("nome");
+        if (nome == null) {
+            nome = prompt("Qual o seu nome?");
+        }
+        localStorage.setItem("nome", nome);
+
+        var cpf = localStorage.getItem("cpf");
+        if (cpf == null) {
+            cpf = prompt("Qual o seu CPF?");
+        }
+        localStorage.setItem("cpf", cpf);
+
+        var welcome = document.getElementById("welcome");
+        welcome.innerText = "Seja bem-vindo" + (", ") + nome;
+
+        var modalBg = document.getElementById("modal-bg")
+        function openModal() {
+            modalBg.style.display = "flex"
+        }
+        function closeModal() {
+            modalBg.style.display = "none"
+        }
+
+        function j(){
+            
+        }
+
+
+
+        document.addEventListener("click", (event) => {
+            if (event.target.id) {
+                closeModal();
+            }
+        })
+
+        var modal = document.getElementById("modal");
+        modal.innerHTML = `<p> Seu nome é: ${nome} <br> Seu CPF é: ${cpf} </p>`
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliques</title>
+    <style>
+        h1 {
+            display: inline-block;
+            background-color: red;
+        }
+        button {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <button onclick="diminuir()">-</button>
+    <h1 id="contador">Clique para começar</h1>
+    <button onclick="aumentar()">+</button>
+
+    <script>
+        var contador = document.getElementById("contador");
+
+        var quantidadeDeCliques = 0;
+
+        document.addEventListener("keypress", (event) => {
+            
+            if (event.key == "+" || event.key == "=") {
+                aumentar();
+            }
+            else if (event.key == "-" || event.key == "_") {
+                diminuir();
+            }
+            else if (event.key == "r") {
+                resetar();
+            }
+        })
+
+        function aumentar() {
+            quantidadeDeCliques = quantidadeDeCliques + 1;
+            contador.innerText = quantidadeDeCliques
+        }
+        function diminuir() {
+            if (quantidadeDeCliques > 1) {
+                quantidadeDeCliques = quantidadeDeCliques - 1;
+                contador.innerText = quantidadeDeCliques;
+            }
+            else {
+                quantidadeDeCliques = 0;
+                contador.innerText = "Clique para começar";
+            }
+
+        }
+        function resetar() {
+            quantidadeDeCliques = 0;
+            contador.innerText = "Clique para começar";
+        }
+
+    </script>
+</body>
+
+</html>

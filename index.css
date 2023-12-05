@@ -1,0 +1,50 @@
+body {
+    background-color: rgba(0, 0, 0, 0.774);
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+div {
+    max-width: 500px;
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    background-color: rgb(255, 136, 0);
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 8px;
+}
+
+input {
+    color: green;
+    background-color: rgba(255, 255, 255, 0.932);
+    color: rgb(0, 0, 0);
+    padding: 5px;
+}
+
+button {
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: green;
+}
+
+h1 {
+    color: #621515;
+    margin-bottom: 5px;
+}
